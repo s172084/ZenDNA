@@ -1,0 +1,12 @@
+Package: ZenDNA
+Version: 0.1
+Date: 2022-03-31
+Title: The Central Dogma of Molecular Biology
+Author: Oriade Latifah Simpson
+Maintainer: Oriade Latifah Simpson <s172084@dtu.dk>
+Description: A package to model a mechanism of DNA to Protein 
+RoxygenNote: 7.1.2
+Imports: ggplot2, stringr
+Suggests: knitr, rmarkdown, devtools, roxygen2, testthat
+License: MIT + file LICENSE
+VignetteBuilder: knitr

@@ -1,0 +1,87 @@
+---
+title: "ZenDNA Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ZenDNA vignette≈}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+options(tibble.print_min = 4L, tibble.print_max = 4L)
+set.seed(1014)
+#rmarkdown::pdf_document
+```
+
+## Overview
+
+ZenDNA is a package regarding the Central Dogma of Molecular Biology.
+
+ZenDNA provides a consistent set of verbs that help you solve the most common molecular biology challenges.
+
+* `create_dna()` generates a random sample of DNA. 
+
+* `create_rna()` substitutes nucleotides in DNA to create RNA. 
+
+* `create_codon()` makes codons based on the RNA sequence. 
+
+You can learn more about the functions in `vignette(ZenDNA)`.
+
+If you are new to ZenDNA, the best place to start is this github repository.
+
+(If you're trying to generate a protein sequence from a DNA sequence, see `vignette(ZenDNA)`)
+
+
+
+## Installation
+
+### Development Version
+
+The easiest way to get ZenDNA is to install the whole package:
+
+```{r, eval = FALSE}
+install.packages("devtools")
+devtools::install_github("s172084/ZenDNA")
+```
+
+
+## Usage
+
+**Synthesize DNA with** `create_dna()`
+
+The first verb is `create_dna()`. It creates a string of DNA 
+
+```{r, eval = FALSE}
+dna_seq <- create_dna(300)
+```
+
+***
+
+
+**Transcribe RNA with** `create_rna()`
+
+The second verb is `create_rna()`. It creates a string of RNA 
+
+```{r, eval = FALSE}
+rna_sequence <- create_rna(dna_seq)
+```
+
+***
+
+**Start Initiation and Elongation of RNA with** `create_codon()`
+
+The third verb is `create_codon()`. It creates separate strings of codons
+
+```{r, eval = FALSE}
+codon_produced <- create_codon(rna_sequence)
+```
+
+
+
+## Getting help
+
+If you encounter a clear bug, please file an issue with a minimal reproducible example on GitHub.
+For questions and other discussion, please email `s172084@dtu.dk`
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
