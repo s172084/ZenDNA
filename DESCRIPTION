@@ -6,7 +6,17 @@ Author: Oriade Latifah Simpson
 Maintainer: Oriade Latifah Simpson <s172084@dtu.dk>
 Description: A package to model a mechanism of DNA to Protein 
 RoxygenNote: 7.1.2
-Imports: ggplot2, stringr
+Imports: 
+    ggplot2,
+    stringr,
+    ggthemes,
+    magrittr,
+    ggthemes
 Suggests: knitr, rmarkdown, devtools, roxygen2, testthat
 License: MIT + file LICENSE
 VignetteBuilder: knitr
+Depends: 
+    magrittr,
+    R (>= 2.10),
+    tidyverse
+LazyData: true

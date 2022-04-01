@@ -29,6 +29,24 @@ install.packages("devtools")
 devtools::install_github("s172084/ZenDNA")
 ```
 
+```{r echo=FALSE, include=FALSE}
+library(ZenDNA)
+```
+
+### Data: the_codon_table
+
+```{r}
+data("the_codon_table")
+```
+
+To explore the basic data manipulation verbs of ZenDNA, we'll use the dataset `the_codon_table`. 
+This dataset comes from the [The Genetic Codes](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=tgencodes#SG1), and is documented in `?the_codon_table`
+
+```{r}
+dim(the_codon_table)
+the_codon_table
+```
+
 
 ## Overview
 
@@ -41,6 +59,13 @@ ZenDNA provides a consistent set of verbs that help you solve the most common mo
 * `create_rna()` substitutes nucleotides in DNA to create RNA. 
 
 * `create_codon()` makes codons based on the RNA sequence. 
+
+* `create_polypeptide()` makes polypeptides based on the codon sequence. 
+
+* `find_aa_distribution()` makes a histogram of the distribution of counts of amino acids in a polypeptide.
+
+* `the_codon_table` Codon to Amino Acid table. 
+
 
 You can learn more about the functions in `vignette(ZenDNA)`.
 
@@ -80,7 +105,36 @@ The third verb is `create_codon()`. It creates separate strings of codons
 codon_produced <- create_codon(rna_sequence)
 ```
 
+***
 
+**Protein structure creation with** `create_polypeptide()`
+
+The fourth verb is `create_polypeptide()`. It creates a polypeptide sequence from the codons.
+
+
+```{r, eval = FALSE}
+polypeptide_sequence <- create_polypeptide(c("AUG", "CAA", "CGA", "UCA"))
+polypeptide_sequence
+```
+
+***
+
+**Find the distribution of amino acids in the polypeptide with** `find_aa_distribution()`
+
+The fifth verb is `find_aa_distribution()`. It plots a histogram of the distribution of amino acids in the polypeptide.
+
+
+```{r}
+distrib_plot <- find_aa_distribution("HEGGHNRSRSSRTTSLKEET")
+```
+
+```{r echo=FALSE, fig.align='left', out.width='60%'}
+knitr::include_graphics('man/figures/README-unnamed-chunk-10-1.png')
+```
+
+
+
+***
 
 ## Getting help
 
