@@ -26,7 +26,7 @@ data("the_codon_table")
 To explore the basic data manipulation verbs of ZenDNA, we’ll use the
 dataset `the_codon_table`. This dataset comes from the [The Genetic
 Codes](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=tgencodes#SG1),
-and is documented in `?the_codon_table`
+and is documented in `the_codon_table`
 
 ``` r
 dim(the_codon_table)
