@@ -26,6 +26,12 @@ ZenDNA provides a consistent set of verbs that help you solve the most common mo
 
 * `create_codon()` makes codons based on the RNA sequence. 
 
+* `create_polypeptide()` makes polypeptides based on the codon sequence. 
+
+* `find_aa_distribution()` makes a histogram of the distribution of counts of amino acids in a polypeptide.
+
+* `the_codon_table` Codon to Amino Acid table. 
+
 You can learn more about the functions in `vignette(ZenDNA)`.
 
 If you are new to ZenDNA, the best place to start is this github repository.
@@ -77,6 +83,36 @@ The third verb is `create_codon()`. It creates separate strings of codons
 codon_produced <- create_codon(rna_sequence)
 ```
 
+
+***
+
+**Protein structure creation with** `create_polypeptide()`
+
+The fourth verb is `create_polypeptide()`. It creates a polypeptide sequence from the codons.
+
+
+```{r, eval = FALSE}
+polypeptide_sequence <- create_polypeptide(c("AUG", "CAA", "CGA", "UCA"))
+polypeptide_sequence
+```
+
+
+***
+
+**Find the distribution of amino acids in the polypeptide with** `find_aa_distribution()`
+
+The fifth verb is `find_aa_distribution()`. It plots a histogram of the distribution of amino acids in the polypeptide.
+
+
+
+```{r, eval = FALSE}
+distrib_plot <- find_aa_distribution("HEGGHNRSRSSRTTSLKEET")
+```
+
+
+```{r echo=FALSE, fig.align='left', message=FALSE, warning=FALSE, out.width='60%'}
+knitr::include_graphics('man/figures/README-unnamed-chunk-10-1.png')
+```
 
 
 ## Getting help
